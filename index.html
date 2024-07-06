@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="./JS/script1.js"></script>
     <meta charset="utf-8" />
     <title>Battle of Elements</title>
   </head>
@@ -19,19 +20,19 @@
       <label for="Ratigueya">Ratigueya</label>
       <input type="radio" name="pet" id="Ratigueya" />
 
-      <button>Select</button>
+      <button id="button-pets">Select</button>
     </section>
 
     <section id="select-attack">
       <h2>Choose your attack:</h2>
 
-      <p>Your pet has <span>3</span> life</p>
-      <p>The enemy's pets have <span>3</span> life</p>
+      <p>Your pet <span id="petUser"></span>have<span>3</span> life</p>
+      <p>The enemy's pets <span id="petEnemy"></span> have<span>3</span> life</p>
 
       <p>
-        <button>Fire 🔥</button>
-        <button>Water 💧</button>
-        <button>Plant 🌱</button>
+        <button id="button-fire">Fire 🔥</button>
+        <button id="button-water">Water 💧</button>
+        <button id="button-plant">Plant 🌱</button>
       </p>
     </section>
 
@@ -43,8 +44,7 @@
     </section>
 
     <section id="restart">
-      <button>Restart</button>
+      <button id="button-restart">Restart</button>
     </section>
   </body>
-  <script src="./JS/script1.js"></script>
 </html>
