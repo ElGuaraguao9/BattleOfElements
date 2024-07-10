@@ -6,8 +6,12 @@ let enemyLife = 3;
 
 //start script when html finished loading
 window.addEventListener("load", startGame);
-//function to start game when the player pick a pet
+//
 function startGame() {
+  //disable section "select-attack"
+  let sectionSelectAttack = document.getElementById("select-attack");
+  sectionSelectAttack.style.display = "none";
+  //function to start game when the player pick a pet
   let buttonPetPlayer = document.getElementById("button-pet");
   buttonPetPlayer.addEventListener("click", selectPetPlayer);
   //button attack
@@ -20,9 +24,19 @@ function startGame() {
   //Restart game
   let restartButton = document.getElementById("button-restart");
   restartButton.addEventListener("click", restartGame);
+  //disable restart buttom
+  let sectionSelectButtonRestart = document.getElementById("button-restart");
+  sectionSelectButtonRestart.style.display = "none";
 }
 //Function to add pet for the user, if not alert user to do so
 function selectPetPlayer() {
+  //display pet button
+  let sectionSelectAttack = document.getElementById("select-attack");
+  sectionSelectAttack.style.display = "block";
+  //disable "select-pet" section
+  let sectionSelectPet = document.getElementById("select-pet");
+  sectionSelectPet.style.display = "none";
+  //
   let intputHipodoge = document.getElementById("Hipodoge");
   let intputCapipepo = document.getElementById("Capipepo");
   let intputRatigueya = document.getElementById("Ratigueya");
@@ -145,6 +159,9 @@ function createMessagesEndBattle(finalResult) {
   buttonWater.disabled = true;
   let buttonPlant = document.getElementById("button-plant");
   buttonPlant.disabled = true;
+  //display restart button
+  let sectionSelectButtonRestart = document.getElementById("button-restart");
+  sectionSelectButtonRestart.style.display = "block";
 }
 //the button "button-restart" will reload que web page
 function restartGame() {
