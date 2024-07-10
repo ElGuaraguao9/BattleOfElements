@@ -1,6 +1,8 @@
 //Global Variables
 let playerAttack;
 let enemyAttack;
+let playerLife = 3;
+let enemyLife = 3;
 
 //start script when html finished loading
 window.addEventListener("load", startGame);
@@ -76,10 +78,10 @@ function enemyRandomAttack() {
   } else {
     enemyAttack = "plant";
   }
-  createMessages();
+  battle();
 }
 //Insert messages, battle result
-function createMessages() {
+function createMessages(result) {
   let insertMessages = document.getElementById("messages");
   let paragraph = document.createElement("p");
   paragraph.innerHTML =
@@ -87,6 +89,34 @@ function createMessages() {
     playerAttack +
     ", the enemy's Pet attacked with " +
     enemyAttack +
-    " - you Win";
+    " - " +
+    result +
+    ".";
   insertMessages.appendChild(paragraph);
+}
+// Start the Battle
+function battle() {
+  //this will replase the number of life (3) of the pets
+  let spanPlayerLife = document.getElementById("player-life");
+  let spanEnemyLife = document.getElementById("enemy-life");
+
+  if (enemyAttack == playerAttack) {
+    createMessages("Draw");
+  } else if (playerAttack == "fire" && enemyAttack == "plant") {
+    createMessages("You win");
+    enemyLife--;
+    spanEnemyLife.innerHTML = enemyLife;
+  } else if (playerAttack == "water" && enemyAttack == "fire") {
+    createMessages("You win");
+    enemyLife--;
+    spanEnemyLife.innerHTML = enemyLife;
+  } else if (playerAttack == "plant" && enemyAttack == "water") {
+    createMessages("You win");
+    enemyLife--;
+    spanEnemyLife.innerHTML = enemyLife;
+  } else {
+    createMessages("you lose");
+    playerLife--;
+    spanPlayerLife.innerHTML = playerLife;
+  }
 }
