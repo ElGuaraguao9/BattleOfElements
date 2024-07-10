@@ -17,6 +17,9 @@ function startGame() {
   buttonWater.addEventListener("click", waterAttack);
   let buttonPlant = document.getElementById("button-plant");
   buttonPlant.addEventListener("click", plantAttack);
+  //Restart game
+  let restartButton = document.getElementById("button-restart");
+  restartButton.addEventListener("click", restartGame);
 }
 //Function to add pet for the user, if not alert user to do so
 function selectPetPlayer() {
@@ -99,7 +102,7 @@ function battle() {
   //this will replase the number of life (3) of the pets
   let spanPlayerLife = document.getElementById("player-life");
   let spanEnemyLife = document.getElementById("enemy-life");
-
+  //Insert the massages result of the player or enemy
   if (enemyAttack == playerAttack) {
     createMessages("Draw");
   } else if (playerAttack == "fire" && enemyAttack == "plant") {
@@ -119,4 +122,31 @@ function battle() {
     playerLife--;
     spanPlayerLife.innerHTML = playerLife;
   }
+  checkLife();
+}
+//This will check the player and enemy life
+function checkLife() {
+  if (enemyLife == 0) {
+    createMessagesEndBattle("----------Great you won the Battle!----------");
+  } else if (playerLife == 0) {
+    createMessagesEndBattle("----------You Lose the Battle----------");
+  }
+}
+//End Battle
+function createMessagesEndBattle(finalResult) {
+  let insertMessages = document.getElementById("messages");
+  let paragraph = document.createElement("p");
+  paragraph.innerHTML = finalResult;
+  insertMessages.appendChild(paragraph);
+  //disabled element button
+  let buttonFire = document.getElementById("button-fire");
+  buttonFire.disabled = true;
+  let buttonWater = document.getElementById("button-water");
+  buttonWater.disabled = true;
+  let buttonPlant = document.getElementById("button-plant");
+  buttonPlant.disabled = true;
+}
+//the button "button-restart" will reload que web page
+function restartGame() {
+  location.reload();
 }
