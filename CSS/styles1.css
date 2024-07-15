@@ -1,0 +1,21 @@
+html {
+  background-color: #fff6e9;
+}
+#select-pet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pet-card {
+  width: 100px;
+  height: 100px;
+  background: #80c4e9;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 5px;
+}
+input {
+  display: none;
+}
+ 
