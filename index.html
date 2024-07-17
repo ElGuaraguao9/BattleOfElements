@@ -8,28 +8,42 @@
   </head>
 
   <body>
-    <section id="select-pet">
-      <h1>Battle of Elements 🔥💧🌱</h1>
+    <section id="select-pet" class="box">
+      <h1>Battle of Elements</h1>
       <h2>Choose your pet:</h2>
+      <div class="pets">
+        <label class="pet-card" for="Hipodoge">
+          <img src="./img/dog.jpg" alt="Hipodoge" />
+        </label>
+        <input type="radio" name="pet" id="Hipodoge" />
 
-      <label class="pet-card" for="Hipodoge">Hipodoge</label>
-      <input type="radio" name="pet" id="Hipodoge" />
+        <label class="pet-card" for="Capipepo">
+          <img src="./img/cat.jpg" alt="Capipepo" />
+        </label>
+        <input type="radio" name="pet" id="Capipepo" />
 
-      <label class="pet-card" for="Capipepo">Capipepo</label>
-      <input type="radio" name="pet" id="Capipepo" />
-
-      <label class="pet-card" for="Ratigueya">Ratigueya</label>
-      <input type="radio" name="pet" id="Ratigueya" />
+        <label class="pet-card" for="Ratigueya">
+          <img src="./img/rat.jpg" alt="Ratigueya" />
+        </label>
+        <input type="radio" name="pet" id="Ratigueya" />
+      </div>
+      <div class="petName">
+        <p>Hipodoge</p>
+        <p>Capipepo</p>
+        <p>Ratigueya</p>
+      </div>
 
       <button id="button-pet">Select</button>
     </section>
 
     <section id="select-attack">
-      <h1>Battle of Elements 🔥💧🌱</h1>
-      <h2>Choose your attack:</h2>
+      <div class="box">
+        <h1>Battle of Elements</h1>
+        <h2>Choose your attack:</h2>
+      </div>
 
       <p>
-        Your pet <span id="petUser"></span>have
+        Your pet <span id="petUser"></span> have
         <span id="player-life">3</span> life
       </p>
       <p>
@@ -38,9 +52,9 @@
       </p>
 
       <p>
-        <button id="button-fire">Fire 🔥</button>
-        <button id="button-water">Water 💧</button>
-        <button id="button-plant">Plant 🌱</button>
+        <button id="button-fire">Fire</button>
+        <button id="button-water">Water</button>
+        <button id="button-plant">Plant</button>
       </p>
     </section>
 
