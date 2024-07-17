@@ -32,7 +32,7 @@ function startGame() {
 function selectPetPlayer() {
   //display pet button
   let sectionSelectAttack = document.getElementById("select-attack");
-  sectionSelectAttack.style.display = "block";
+  sectionSelectAttack.style.display = "flex";
   //disable "select-pet" section
   let sectionSelectPet = document.getElementById("select-pet");
   sectionSelectPet.style.display = "none";
