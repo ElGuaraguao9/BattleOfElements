@@ -69,3 +69,11 @@ input {
   flex-direction: column;
   align-items: center;
 }
+.button-click{
+  width: 84px;
+  height: 34px;
+  background-color: #80C4E9;
+  margin-top: 40px;
+  border: 3px solid #604cc3;
+  border-radius: 20px;
+}

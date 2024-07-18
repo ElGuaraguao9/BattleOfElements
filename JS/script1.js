@@ -51,6 +51,7 @@ function selectPetPlayer() {
     spanPetPlayer.innerHTML = "Ratigueya";
   } else {
     alert("Please select a Pet");
+    restartGame();
   }
   selectPetEnemy();
 }
