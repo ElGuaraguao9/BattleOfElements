@@ -7,6 +7,7 @@ let enemyLife = 3;
 //start script when html finished loading
 window.addEventListener("load", startGame);
 //
+
 function startGame() {
   //disable section "select-attack"
   let sectionSelectAttack = document.getElementById("select-attack");
@@ -28,6 +29,7 @@ function startGame() {
   let sectionSelectButtonRestart = document.getElementById("button-restart");
   sectionSelectButtonRestart.style.display = "none";
 }
+
 //Function to add pet for the user, if not alert user to do so
 function selectPetPlayer() {
   //display pet button
@@ -55,10 +57,12 @@ function selectPetPlayer() {
   }
   selectPetEnemy();
 }
+
 //this will give a random number
 function randomE(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 //Enemy will receive a random pet
 function selectPetEnemy() {
   let enemyPetPick = randomE(1, 3);
@@ -72,6 +76,7 @@ function selectPetEnemy() {
     spanPetEnemy.innerHTML = "Ratigueya";
   }
 }
+
 //3 function for give an attack for the pet, this will give a element for the pets, player and enemy
 function fireAttack() {
   playerAttack = "fire";
@@ -85,6 +90,7 @@ function plantAttack() {
   playerAttack = "plant";
   enemyRandomAttack();
 }
+
 //Give a random attack element for the enemy
 function enemyRandomAttack() {
   let randomEnAtk = randomE(1, 3);
@@ -98,20 +104,24 @@ function enemyRandomAttack() {
   }
   battle();
 }
-//Insert messages, battle result
+
+//=======Insert messages, battle result======
 function createMessages(result) {
-  let insertMessages = document.getElementById("messages");
-  let paragraph = document.createElement("p");
-  paragraph.innerHTML =
-    "Your pet attacked with " +
-    playerAttack +
-    ", the enemy's Pet attacked with " +
-    enemyAttack +
-    " - " +
-    result +
-    ".";
-  insertMessages.appendChild(paragraph);
+  let sectionMessages = document.getElementById("result");
+  let pAttack = document.getElementById("player-attack");
+  let eAttack = document.getElementById("enemy-attack");
+
+  let newAttackOfPlayer = document.createElement("p");
+  let newAttackOfEnemy = document.createElement("p");
+
+  sectionMessages.innerHTML = result;
+  newAttackOfPlayer.innerHTML = playerAttack;
+  newAttackOfEnemy.innerHTML = enemyAttack;
+
+  pAttack.appendChild(newAttackOfPlayer);
+  eAttack.appendChild(newAttackOfEnemy);
 }
+
 // Start the Battle
 function battle() {
   //this will replase the number of life (3) of the pets
@@ -149,10 +159,11 @@ function checkLife() {
 }
 //End Battle
 function createMessagesEndBattle(finalResult) {
-  let insertMessages = document.getElementById("messages");
+  let insertMessages = document.getElementById("result");
   let paragraph = document.createElement("p");
   paragraph.innerHTML = finalResult;
   insertMessages.appendChild(paragraph);
+
   //disabled element button
   let buttonFire = document.getElementById("button-fire");
   buttonFire.disabled = true;
@@ -160,10 +171,12 @@ function createMessagesEndBattle(finalResult) {
   buttonWater.disabled = true;
   let buttonPlant = document.getElementById("button-plant");
   buttonPlant.disabled = true;
+
   //display restart button
   let sectionSelectButtonRestart = document.getElementById("button-restart");
   sectionSelectButtonRestart.style.display = "block";
 }
+
 //the button "button-restart" will reload que web page
 function restartGame() {
   location.reload();
