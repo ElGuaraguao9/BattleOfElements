@@ -152,17 +152,15 @@ function battle() {
 //This will check the player and enemy life
 function checkLife() {
   if (enemyLife == 0) {
-    createMessagesEndBattle("----------Great you won the Battle!----------");
+    createMessagesEndBattle("-Great you won the Battle!-");
   } else if (playerLife == 0) {
-    createMessagesEndBattle("----------You Lose the Battle----------");
+    createMessagesEndBattle("-You Lose the Battle-");
   }
 }
 //End Battle
 function createMessagesEndBattle(finalResult) {
-  let insertMessages = document.getElementById("result");
-  let paragraph = document.createElement("p");
-  paragraph.innerHTML = finalResult;
-  insertMessages.appendChild(paragraph);
+  let sectionMessages = document.getElementById("result");
+  sectionMessages.innerHTML = finalResult;
 
   //disabled element button
   let buttonFire = document.getElementById("button-fire");
