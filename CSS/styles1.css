@@ -5,11 +5,11 @@ body {
 }
 h1 {
   color: #ff7f3e;
-  font-size: 350%;
+  font-size: 320%;
 }
 h2 {
   color: #ff7f3e;
-  font-size: 150%;
+  font-size: 120%;
 }
 .box {
   display: flex;
@@ -21,13 +21,13 @@ h2 {
   display: flex;
 }
 .pets img {
-  width: 170px;
-  height: 170px;
+  width: 270px;
+  height: 270px;
 }
 .pet-card {
   display: flex;
-  width: 198px;
-  height: 198px;
+  width: 300px;
+  height: 300px;
   background: #80c4e9;
   padding: 10px;
   box-sizing: border-box;
@@ -39,20 +39,19 @@ h2 {
   display: flex;
 }
 .petName p {
+  color: #ff7f3e;
+  text-transform: uppercase;
+  text-decoration: overline underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 98px;
   height: 38px;
-  background: #80c4e9;
   padding: 5px;
-  box-sizing: border-box;
-  margin-top: 5px;
-  margin-bottom: auto;
-  margin-right: 53px;
-  margin-left: 53px;
-  border: 3px solid #604cc3;
-  border-radius: 20px;
+  margin-right: 104px;
+  margin-left: 104px;
 }
 input {
   display: none;
@@ -93,4 +92,18 @@ input {
   border: none;
   background-color: #80C4E9;
   color: #ff7f3e;
+}
+.player-attack, .enemy-attack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input:checked + label {
+  background-color: #ff7f3e;
+}
+
+@media (max-width: 360px) {
+  .pets {
+    flex-direction: column;
+  }
 }
